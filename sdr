@@ -25,6 +25,14 @@ Tab:AddButton({
         end    
 })
 
+Tab:AddButton({
+	Name = "Ancient (You have to be as close as possible to the bottom)",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-549, 318, -1198)
+        end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
