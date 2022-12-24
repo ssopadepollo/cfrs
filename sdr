@@ -4179,3 +4179,31 @@ Tab:AddButton({
     end)
 end
 })
+
+Tab:AddToggle({
+	Name = "Big Ol' Hut Door Noclip",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().doornoclip = t
+        if getgenv().doornoclip then
+            spawn(
+                function()
+                    while doornoclip do
+                        wait()
+                        pcall(
+                            function()
+                                for i, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
+                                    if v.Name == "Big Ol' Hut" then
+                                    if (v.PrimaryPart.Position - game:GetService("Players").LocalPlayer.Character.UpperTorso.Position).magnitude < 20 then
+                                    v.Door.Transparency = 0.4
+                                    v.Door.CanCollide = false
+                                    end
+                                    end
+                                    end
+                                end)
+                            end
+                        end)
+                    end
+    end
+})
