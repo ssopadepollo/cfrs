@@ -718,6 +718,13 @@ function KeyBindBluefruit()
     game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
 end
 
+function KeyBindStrawBerries()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+end
 
 function AutoPlant()
     local Player = game:GetService("Players").LocalPlayer
@@ -737,6 +744,17 @@ function AutoBlood()
           task.wait()
        end
     end
+end
+
+function AutoStraw()
+    while _G.AutoStraw == true do
+    if _G.AutoStraw == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry") -- fruit
+     end
+      task.wait()
+   end
+end
 end
 
 function AutoBerries()
@@ -826,6 +844,15 @@ Heals:AddToggle({
 	Callback = function(Value)
 		_G.AutoJelly = Value
         AutoJelly()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Strawberry",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoStraw = Value
+        AutoStraw()
 	end    
 })
 
