@@ -1419,6 +1419,20 @@ Tab:AddButton({
 
 local chosenFruit = "Bloodfruit"
 
+Tab:AddSlider({
+	Name = "Magnitude",
+	Min = 8,
+	Max = 60,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(t)
+		print(t)
+        getgenv().magnitude1 = t
+	end    
+})
+
 Tab:AddToggle({
 	Name = "Harverest Fruit",
 	Default = false,
@@ -1428,7 +1442,7 @@ Tab:AddToggle({
         spawn(function()
             while getgenv().planting == true and wait() do
                 for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
-                    if v.Name == getgenv().getfruit and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < 60 then
+                    if v.Name == getgenv().getfruit and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude1 then
                         game:GetService("ReplicatedStorage").Events.Pickup:FireServer(v)
                         
                     end
