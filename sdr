@@ -63,20 +63,6 @@ Tab:AddButton({
 })
 
 local Section = Tab:AddSection({
-	Name = "God Armor Invisible"
-})
-
-Tab:AddTextbox({
-	Name = "Armor Name",
-	Default = "",
-	TextDisappear = false,
-	Callback = function(Value)
-		print(Value)
-        getgenv().armorname = Value
-	end	  
-})
-
-local Section = Tab:AddSection({
 	Name = "Block Hats"
 })
 
@@ -1021,7 +1007,7 @@ Tab:AddSlider({
 Tab:AddSlider({
 	Name = "Jumppower",
 	Min = 50,
-	Max = 200,
+	Max = 65,
 	Default = 5,
 	Color = Color3.fromRGB(255,255,255),
 	Increment = 1,
@@ -1049,76 +1035,6 @@ Tab:AddSlider({
                 end)
                 Humanoid.WalkSpeed = _G.WS;
 	end    
-})
-
-Tab:AddSlider({
-	Name = "Selected Heal for Auto Eat",
-	Min = 1,
-	Max = 100,
-	Default = 80,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "",
-	Callback = function(ls)
-		print(ls)
-
-        getgenv().autoeatslider = ls
-	end    
-})
-
-Tab:AddTextbox({
-	Name = "Eat Item",
-	Default = "",
-	TextDisappear = false,
-	Callback = function(p)
-		print(p)
-        getgenv().eatname = p
-	end	  
-})
-
-Tab:AddToggle({
-	Name = "Auto Eat",
-	Default = false,
-	Callback = function(m)
-		print(m)
-        getgenv().autohealonhealth = m
-        if m then
-            spawn(
-                function()
-                    while autohealonhealth do
-                        wait()
-                        if game.Players.LocalPlayer.Character.Humanoid.Health < getgenv().autoeatslider then
-                            pcall(
-                                function()
-                                    spawn(
-                                        function()
-                                            game:GetService("ReplicatedStorage").Events.UseBagltem:FireServer(
-                                                getgenv().eatname
-                                            )
-                                        end
-                                    )
-                                    spawn(
-                                        function()
-                                            game:GetService("ReplicatedStorage").Events.UseBagltem:FireServer(
-                                                getgenv().eatname
-                                            )
-                                        end
-                                    )
-                                    spawn(
-                                        function()
-                                            game:GetService("ReplicatedStorage").Events.UseBagltem:FireServer(
-                                                getgenv().eatname
-                                            )
-                                        end
-                                    )
-                                end
-                            )
-                        end
-                        wait()
-                    end
-                end)
-            end
-        end
 })
 
 Tab:AddButton({
@@ -1156,106 +1072,6 @@ Tab:AddButton({
 	Callback = function()
       		print("button pressed")
               game.Players.LocalPlayer.Character.Humanoid.Animator:Destroy()
-    end
-})
-
-local Section = Tab:AddSection({
-	Name = "Color (Not FE, i need fix one arm)"
-})
-
-Tab:AddButton({
-	Name = "Red",
-	Callback = function()
-      		print("button pressed")
-              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Characyer.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
-    end
-})
-
-Tab:AddButton({
-	Name = "Gray",
-	Callback = function()
-      		print("button pressed")
-              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Characyer.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
-    end
-})
-
-Tab:AddButton({
-	Name = "White",
-	Callback = function()
-      		print("button pressed")
-              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Characyer.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
-    end
-})
-
-Tab:AddButton({
-	Name = "Pink",
-	Callback = function()
-      		print("button pressed")
-              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Characyer.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
-    end
-})
-
-Tab:AddButton({
-	Name = "Green",
-	Callback = function()
-      		print("button pressed")
-              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Characyer.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
-    end
-})
-
-Tab:AddButton({
-	Name = "Blue",
-	Callback = function()
-      		print("button pressed")
-              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Characyer.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
-              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
     end
 })
 
@@ -2777,6 +2593,29 @@ Tab:AddButton({
         end    
 })
 
+Tab:AddButton({
+	Name = "Cham",
+	Callback = function(t)
+      		print("button pressed")
+                                        local plr = game.Players.LocalPlayer
+                                        local players = game.Players:GetPlayers()
+
+                                        for i, v in pairs(players) do
+                                        if v ~= game.Players.LocalPlayer then
+                                            if v ~= game.Players.RatatuiHelp then
+                                        local esp = Instance.new("Highlight")
+                                        esp.Name = "chams"
+                                        esp.FillTransparency = 0.5
+                                        esp.FillColor = Color3.new(0, 0, 25)
+                                        esp.OutlineColor = Color3.new(0, 0, 0)
+                                        esp.OutlineTransparency = 0
+                                        esp.Parent = v.Character
+                                           end
+                                        end
+                                    end
+        end    
+})
+
 local Section = Tab:AddSection({
 	Name = "Item Esp"
 })
@@ -3445,66 +3284,6 @@ Tab:AddToggle({
             end
 })
 
-Tab:AddToggle({
-	Name = "Adurite",
-	Default = false,
-	Callback = function(m)
-		print(m)
-                getgenv().godesp = m
-                if m then
-                    spawn(
-                        function()
-                            while godesp do
-                                wait()
-                                pcall(
-                                    function()
-                                        for b, c in pairs(game.workspace["Miserable God"].Health:GetChildren()) do
-                                            if c.Name:find("Value") then
-                                                if not c:FindFirstChildWhichIsA("BillboardGui") then
-                                                    local a3 = Instance.new("BillboardGui", c)
-                                                    local a4 = Instance.new("TextLabel", a3)
-                                                    a3.Name = c.Name
-                                                    a3.ResetOnSpawn = false
-                                                    a3.AlwaysOnTop = true
-                                                    a3.LightInfluence = 0
-                                                    a3.Size = UDim2.new(0, 10, 0, 10)
-                                                    a4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-                                                    a4.Text = c.Name
-                                                    a4.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
-                                                    a4.BorderSizePixel = 4
-                                                    a4.BorderColor3 = Color3.new(255, 255, 255)
-                                                    a4.BorderSizePixel = 0
-                                                    a4.Font = "GothamBlack"
-                                                    a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(85, 255, 0)
-                                                end
-                                            end
-                                        end
-                                    end
-                                )
-                                wait(5)
-                            end
-                        end
-                    )
-                end
-                if m then
-                else
-                    pcall(
-                        function()
-                            for b = 1, 10 do
-                                for b, c in pairs(game.workspace["Miserable God"].Health:GetChildren()) do
-                                    if c.Name:find("Value") then
-                                        c:FindFirstChildWhichIsA("BillboardGui"):Remove()
-                                    end
-                                end
-                                wait(0.1)
-                            end
-                        end
-                    )
-                end
-            end
-})
-
 local Section = Tab:AddSection({
 	Name = "Node Esp"
 })
@@ -3944,6 +3723,106 @@ Tab:AddButton({
         end    
 })
 
+local Section = Tab:AddSection({
+	Name = "Color (Not FE)"
+})
+
+Tab:AddButton({
+	Name = "Red",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(86, 36, 36)
+    end
+})
+
+Tab:AddButton({
+	Name = "Gray",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(99, 95, 98)
+    end
+})
+
+Tab:AddButton({
+	Name = "White",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(237, 234, 234)
+    end
+})
+
+Tab:AddButton({
+	Name = "Pink",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(255, 152, 220)
+    end
+})
+
+Tab:AddButton({
+	Name = "Green",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(39, 70, 45)
+    end
+})
+
+Tab:AddButton({
+	Name = "Blue",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Head.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.RightUpperArm.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.RightLowerArm.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.LeftLowerArm.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.LeftHand.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
+              game.Players.LocalPlayer.Character.LeftUpperArm.Color = Color3.fromRGB(128, 187, 219)
+    end
+})
+
 local Tab = Window:MakeTab({
 	Name = "Invisible",
 	Icon = "rbxassetid://4483345998",
@@ -3986,6 +3865,12 @@ Tab:AddButton({
 			  game.Players.LocalPlayer.Character["God Chestplate"].Handle.AccessoryWeld:Destroy()		   
         end    
 })
+
+--Void armor invisible (LEG)
+--game:GetService("Workspace").LocalPlayer["Void Greaves Left Foot"].Handle.AccessoryWeld:Destroy()
+--game:GetService("Workspace").LocalPlayer["Void Greaves Right Foot"].Handle.AccessoryWeld:Destroy()
+--game:GetService("Workspace").LocalPlayer["Void Greaves Left Leg"].Handle.AccessoryWeld:Destroy()
+--game:GetService("Workspace").LocalPlayer["Void Greaves Right Leg"].Handle.AccessoryWeld:Destroy()
 
 local Tab = Window:MakeTab({
 	Name = "Pick Up Whitelist",
@@ -4253,6 +4138,14 @@ Tab:AddToggle({
                                     if (v.PrimaryPart.Position - game:GetService("Players").LocalPlayer.Character.UpperTorso.Position).magnitude < 20 then
                                     v.Door.Transparency = 0.4
                                     v.Door.CanCollide = false
+                                    for i, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
+                                        if v.Name == "God Hut" then
+                                        if (v.PrimaryPart.Position - game:GetService("Players").LocalPlayer.Character.UpperTorso.Position).magnitude < 20 then
+                                        v.Door.Transparency = 0.4
+                                        v.Door.CanCollide = false
+                                        end
+                                        end
+                                        end
                                     end
                                     end
                                     end
@@ -4281,6 +4174,14 @@ Tab:AddToggle({
                                     if (v.PrimaryPart.Position - game:GetService("Players").LocalPlayer.Character.UpperTorso.Position).magnitude < 20 then
                                     v.Door.Transparency = 1
                                     v.Door.CanCollide = false
+                                    for i, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
+                                        if v.Name == "Reinforced Chest" then
+                                        if (v.PrimaryPart.Position - game:GetService("Players").LocalPlayer.Character.UpperTorso.Position).magnitude < 20 then
+                                        v.Door.Transparency = 1
+                                        v.Door.CanCollide = false
+                                        end
+                                        end
+                                        end
                                     end
                                     end
                                     end
@@ -4289,4 +4190,131 @@ Tab:AddToggle({
                         end)
                     end
     end
+})
+
+Tab:AddToggle({
+	Name = "Structure Works only for structures with door",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().stealchest = t
+        if getgenv().stealchest then
+            spawn(
+                function()
+                    while stealchest do
+                        wait()
+                        pcall(
+                            function()
+                                    for i, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
+                                        if v.Name == getgenv().structure1 or v.Name == getgenv().structure2 or v.Name == getgenv().structure3 or v.Name == getgenv().structure4 or v.Name == getgenv().structure5 or v.Name == getgenv().structure6 or v.Name == getgenv().structure7 then
+                                        if (v.PrimaryPart.Position - game:GetService("Players").LocalPlayer.Character.UpperTorso.Position).magnitude < 20 then
+                                        v.Door.Transparency = 0.3
+                                        v.Door.CanCollide = false
+                                        end
+                                        end
+                                        end
+                                end)
+                            end
+                        end)
+                    end
+    end
+})
+
+Tab:AddTextbox({
+	Name = "Structure 1",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure1 = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Structure 2",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure2 = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Structure 3",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure3 = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Structure 4",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure4 = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Structure 5",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure5 = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Structure 6",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure6 = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Structure 7",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().structure7 = p
+	end	  
+})
+
+Tab:AddToggle({
+	Name = "Crystal Bridge (Spirit Key) Close in 1000 Seconds",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().crystalbridge = t
+        if getgenv().crystalbridge then
+            spawn(
+                function()
+                    while crystalbridge do
+                        wait()
+                        pcall(
+                            function()
+                                for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+                                    if v.Name == "CrystalBridge" then
+                                    v.Transparency = 0
+                                    v.CanCollide = true
+                                    wait(1000)
+                                    v.Transparency = 1
+                                    v.CanCollide = false
+                            end 
+                            end
+    end)
+end
+end)
+end
+end
 })
