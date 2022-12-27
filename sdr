@@ -1172,7 +1172,7 @@ Tab:AddToggle({
 		print(t)
         getgenv().planting = t
         spawn(function()
-            while getgenv().planting == true and wait() do
+            while getgenv().planting == true and wait(1) do
                 for _, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
                     if v.Name == "Plant Box" and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude then
                         game.ReplicatedStorage.Events.InteractStructure:FireServer(v, getgenv().autoPlantPlant)
@@ -1247,7 +1247,7 @@ Tab:AddToggle({
 		print(t)
         getgenv().planting = t
         spawn(function()
-            while getgenv().planting == true and wait() do
+            while getgenv().planting == true and wait(0.5) do
                 for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
                     if v.Name == getgenv().getfruit and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude1 then
                         game:GetService("ReplicatedStorage").Events.Pickup:FireServer(v)
