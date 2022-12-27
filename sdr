@@ -12,8 +12,7 @@ Tab:AddButton({
 	Name = "Old God",
 	Callback = function()
       		print("button pressed")
-local Pos = game:GetService("Workspace").TpBack.TopOfWhiteAntArea.Position
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(Pos)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(210, -142, 1079)
   	end    
 })
 
