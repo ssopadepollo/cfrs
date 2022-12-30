@@ -3840,39 +3840,34 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddButton({
-	Name = "God Rock Invisible",
+	Name = "Tool Invisible",
 	Callback = function()
       		print("button pressed")
-              game.Players.LocalPlayer.Character["God Rock"].Part:Destroy()
-        end    
+              for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                if v:IsA("Model") then
+                for i, c in pairs(v:GetDescendants()) do
+                if c.Name == "Part" then
+                c:Destroy()
+                end
+                end
+                end
+                end
+                end    
 })
 
 Tab:AddButton({
-	Name = "God Pick Invisible",
+	Name = "Armor Invisible",
 	Callback = function()
       		print("button pressed")
-              game.Players.LocalPlayer.Character["God Pick"].Rod:Destroy()
-              game.Players.LocalPlayer.Character["God Pick"].Color:Destroy()
-              game.Players.LocalPlayer.Character["God Pick"].Color:Destroy()
-              game.Players.LocalPlayer.Character["God Pick"].Color:Destroy()
-        end    
-})
-
-Tab:AddButton({
-	Name = "God Armor Invisible",
-	Callback = function()
-      		print("button pressed")
-			  game.Players.LocalPlayer.Character["God Halo"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Halo"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Legs Right Leg"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Legs Right Leg"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Legs Left Leg"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Legs Left Leg"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Legs Right Foot"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Legs Left Foot"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Right Shoulder"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Left Shoulder"].Handle.AccessoryWeld:Destroy()
-			  game.Players.LocalPlayer.Character["God Chestplate"].Handle.AccessoryWeld:Destroy()		   
+              for i, v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+                if v:IsA("Accessory") then
+                for i, d in pairs(v.Handle:GetDescendants()) do
+                if d.Name == "AccessoryWeld" then
+                d:Destroy()
+                end
+                end
+                end
+                end	   
         end    
 })
 
