@@ -2732,10 +2732,19 @@ Tab:AddButton({
         end    
 })
 
-Tab:AddButton({
-	Name = "Cham",
-	Callback = function(t)
-      		print("button pressed")
+Tab:AddToggle({
+	Name = "Chams",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().cham = m
+                if m then
+                    spawn(
+                        function()
+                            while cham do
+                                wait()
+                                pcall(
+                                    function()
                                         local plr = game.Players.LocalPlayer
                                         local players = game.Players:GetPlayers()
 
@@ -2752,7 +2761,29 @@ Tab:AddButton({
                                            end
                                         end
                                     end
-        end    
+                                    end
+                                )
+                                wait(5)
+                            end
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                                for i, v in pairs(game.Players:GetPlayers()) do
+                                    for i, c in pairs(v.Character:GetDescendants()) do
+                                    if c.Name == "chams" then
+                                    c:Destroy()
+                                    end
+                                    end
+                                wait(0.1)
+                            end
+                        end
+                    )
+                end
+            end
 })
 
 local Section = Tab:AddSection({
