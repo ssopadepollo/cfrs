@@ -2381,12 +2381,142 @@ Tab:AddToggle({
                         end
                         })
 
+local Tab = Window:MakeTab({
+Name = "Plant Boxes",
+Icon = "rbxassetid://4483345998",
+PremiumOnly = false
+})
+
 local Section = Tab:AddSection({
 	Name = "Plant Boxes"
 })
 
 Tab:AddButton({
-	Name = "Plant Box 11x7",
+	Name = "1x1",
+	Callback = function()
+      		print("button pressed")
+              local LocalPlayer = game:GetService("Players").LocalPlayer
+              local RootPart = LocalPlayer.Character.HumanoidRootPart
+              local cframe = RootPart.CFrame
+              local Remote = game:GetService("ReplicatedStorage").Events.PlaceStructure
+              
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 1), 2)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "2x2",
+	Callback = function()
+      		print("button pressed")
+              local LocalPlayer = game:GetService("Players").LocalPlayer
+              local RootPart = LocalPlayer.Character.HumanoidRootPart
+              local cframe = RootPart.CFrame
+              local Remote = game:GetService("ReplicatedStorage").Events.PlaceStructure
+              
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 1), 2)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "3x3",
+	Callback = function()
+      		print("button pressed")
+              local LocalPlayer = game:GetService("Players").LocalPlayer
+              local RootPart = LocalPlayer.Character.HumanoidRootPart
+              local cframe = RootPart.CFrame
+              local Remote = game:GetService("ReplicatedStorage").Events.PlaceStructure
+              
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 14), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 14), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 14), 2)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "4x4",
+	Callback = function()
+      		print("button pressed")
+              local LocalPlayer = game:GetService("Players").LocalPlayer
+              local RootPart = LocalPlayer.Character.HumanoidRootPart
+              local cframe = RootPart.CFrame
+              local Remote = game:GetService("ReplicatedStorage").Events.PlaceStructure
+              
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 21), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 21), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 21), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-21, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-21, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-21, -2.5, 14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-21, -2.5, 21), 2)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "5x5",
+	Callback = function()
+      		print("button pressed")
+              local LocalPlayer = game:GetService("Players").LocalPlayer
+              local RootPart = LocalPlayer.Character.HumanoidRootPart
+              local cframe = RootPart.CFrame
+              local Remote = game:GetService("ReplicatedStorage").Events.PlaceStructure
+              
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, -7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, -14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-1, -2.5, 14), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, -7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, -14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-7, -2.5, 14), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, -7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, -14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(-14, -2.5, 14), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(7, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(7, -2.5, -7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(7, -2.5, -14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(7, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(7, -2.5, 14), 2)
+
+              Remote:FireServer("Plant Box", cframe * CFrame.new(14, -2.5, 1), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(14, -2.5, -7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(14, -2.5, -14), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(14, -2.5, 7), 2)
+              Remote:FireServer("Plant Box", cframe * CFrame.new(14, -2.5, 14), 2)
+  	end    
+})
+
+Tab:AddButton({
+	Name = "11x7",
 	Callback = function()
       		print("button pressed")
               local LocalPlayer = game:GetService("Players").LocalPlayer
