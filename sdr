@@ -2642,7 +2642,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(255, 176, 0)
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -2702,7 +2703,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(9, 137, 207) 
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -2762,7 +2764,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(245, 205, 48)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -2822,7 +2825,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(0, 255, 0)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -2882,7 +2886,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(123, 0, 123)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -2942,7 +2947,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(117, 0, 0)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3002,7 +3008,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(123, 0, 123)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3062,7 +3069,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(226, 155, 64)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3122,7 +3130,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(99, 95, 98)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3182,7 +3191,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(151, 0, 0)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3246,7 +3256,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3310,7 +3321,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(255, 176, 0)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3370,7 +3382,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(9, 137, 207)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3430,7 +3443,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(226, 155, 64)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3490,7 +3504,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(151, 0, 0)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3550,7 +3565,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(105, 102, 92)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3610,7 +3626,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
@@ -3657,6 +3674,7 @@ Tab:AddToggle({
                                                 if not c:FindFirstChildWhichIsA("BillboardGui") then
                                                     local a3 = Instance.new("BillboardGui", c)
                                                     local a4 = Instance.new("TextLabel", a3)
+                                                 
                                                     a3.Name = c.Name
                                                     a3.ResetOnSpawn = false
                                                     a3.AlwaysOnTop = true
@@ -3670,7 +3688,8 @@ Tab:AddToggle({
                                                     a4.BorderSizePixel = 0
                                                     a4.Font = "GothamBlack"
                                                     a4.TextSize = 15
-                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.TextColor3 = Color3.fromRGB(0, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
                                                 end
                                             end
                                         end
