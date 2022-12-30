@@ -862,7 +862,7 @@ Tab:AddToggle({
                                 local o = game:GetService("ReplicatedStorage")
                                 function getNear()
                                     local R
-                                    local S = 30, nil
+                                    local S = 100, nil
                                     for b, c in pairs(p:GetPlayers()) do
                                         if c ~= p.LocalPlayer and c.Character.HumanoidRootPart then
                                             if
@@ -1064,6 +1064,24 @@ Tab:AddButton({
       		print("button pressed")
               game.Players.LocalPlayer.Character.Humanoid.Animator:Destroy()
     end
+})
+
+Tab:AddToggle({
+	Name = "Auto Rebirth When Player Lvl 100",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().rebirth100 = t
+        spawn(function()
+            while getgenv().rebirth100 == true and wait(0.1) do
+                local plr = game.Players.LocalPlayer
+
+                if game:GetService("Players").LocalPlayer.PlayerGui.SecondaryGui.PlayerList.List[plr].LevelLabel.Text == 100 then
+                game:GetService("ReplicatedStorage").Events.Rebirth:FireServer()
+                end
+            end
+        end)
+	end    
 })
 
 local Section = Tab:AddSection({
