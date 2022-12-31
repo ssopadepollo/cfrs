@@ -24,6 +24,17 @@ Tab:AddButton({
         end    
 })
 
+Tab:AddButton({
+	Name = "Void TP",
+	Callback = function()
+      		print("button pressed")
+              local TeleportService = game:GetService('TeleportService')
+              local placeID = 11879754496
+              local player = game.Players.LocalPlayer
+              TeleportService:Teleport(placeID, player)
+        end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
@@ -4424,3 +4435,11 @@ end)
 end
 end
 })
+
+local Tab = Window:MakeTab({
+	Name = "Donators",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddLabel("None ;-;")
