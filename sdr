@@ -908,6 +908,52 @@ Tab:AddToggle({
     end
     })
 
+    Tab:AddToggle({
+        Name = "Show Hitbox Aura",
+        Default = false,
+        Callback = function(m)
+            print(m)
+                    getgenv().showaurah = m
+                    if m then
+                        spawn(
+                            function()
+                                while showaurah do
+                                    wait()
+                                    pcall(
+                                        function()
+
+                                            for i,v in next, game:GetService('Players'):GetPlayers() do
+                                                if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+                                                pcall(function()
+                                                v.Character.HumanoidRootPart.Size = Vector3.new(13, 13, 13)
+                                                v.Character.HumanoidRootPart.Transparency = 0.4
+                                                v.Character.HumanoidRootPart.Color = Color3.fromRGB(77, 0, 0)
+                                                v.Character.HumanoidRootPart.Material = "Block"
+                                                v.Character.HumanoidRootPart.CanCollide = false
+                                                end)
+                                                end
+                                                end
+                                        end
+                                    )
+                                    wait(5)
+                                end
+                            end
+                        )
+                    end
+                    if m then
+                    else
+                        pcall(
+                            function()
+                                    for i,v in next, game:GetService('Players'):GetPlayers() do
+                                        v.Character.HumanoidRootPart.Transparency = 1
+                                        v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                                        end
+                                        end)
+                                    end
+                                    wait(0.1)
+        end
+    })
+
 local Tab = Window:MakeTab({
 	Name = "Player",
 	Icon = "rbxassetid://4483345998",
@@ -4408,32 +4454,41 @@ Tab:AddTextbox({
 })
 
 Tab:AddToggle({
-	Name = "Crystal Bridge (Spirit Key) Close in 1000 Seconds",
-	Default = false,
-	Callback = function(t)
-		print(t)
-        getgenv().crystalbridge = t
-        if getgenv().crystalbridge then
-            spawn(
-                function()
-                    while crystalbridge do
-                        wait()
-                        pcall(
-                            function()
-                                for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
-                                    if v.Name == "CrystalBridge" then
-                                    v.Transparency = 0
-                                    v.CanCollide = true
-                                    wait(1000)
-                                    v.Transparency = 1
-                                    v.CanCollide = false
-                            end 
+    Name = "Crystal Bridge (Spirit Key Zone)",
+    Default = false,
+    Callback = function(m)
+        print(m)
+                getgenv().spir = m
+                if m then
+                    spawn(
+                        function()
+                                wait()
+                                pcall(
+                                    function()
+                                        for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+                                            if v.Name == "CrystalBridge" then
+                                            v.Transparency = 0
+                                            v.CanCollide = true
+                                        end
+                                    end
+                                end)
+                                wait(5)
+                            end)
+                        end
+                if m then
+                else
+                    pcall(
+                        function()
+                            for i, v in pairs(game:GetService("Workspace"):GetChildren()) do
+                                if v.Name == "CrystalBridge" then
+                            v.Transparency = 1
+                            v.CanCollide = false
+                                end
                             end
-    end)
-end
-end)
-end
-end
+                                wait(0.1)
+                        end)
+                    end
+    end
 })
 
 local Tab = Window:MakeTab({
