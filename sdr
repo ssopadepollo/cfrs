@@ -35,6 +35,16 @@ Tab:AddButton({
         end    
 })
 
+Tab:AddButton({
+	Name = "Copy Void Link :)",
+	Callback = function()
+      		print("button pressed")
+              local cop = "https://web.roblox.com/games/11879754496/Voidness"
+             setclipboard(tostring(cop))
+        end    
+})
+
+
 local Tab = Window:MakeTab({
 	Name = "Misc",
 	Icon = "rbxassetid://4483345998",
