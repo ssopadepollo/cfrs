@@ -4108,6 +4108,15 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+	Name = "Bug Firework (first equip firework)",
+	Callback = function()
+      		print("button pressed")
+              game.Players.LocalPlayer.Character.Firework.Part.Mesh:Destroy()
+                end    
+})
+
+
+Tab:AddButton({
 	Name = "Armor Invisible",
 	Callback = function()
       		print("button pressed")
