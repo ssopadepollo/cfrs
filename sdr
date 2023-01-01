@@ -8,30 +8,6 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
-Tab:AddTextbox({
-	Name = "Player",
-	Default = "",
-	TextDisappear = false,
-	Callback = function(p)
-		print(p)
-        getgenv().kickname = p
-	end	  
-})
-
-Tab:AddButton({
-	Name = "Kick",
-	Callback = function()
-      		print("button pressed")
-              local player = game.Players.RatatuiHelp
-              player.Chatted:connect(function(msg)
-              if msg == "votar"..getgenv().kickname then
-              game.Players[getgenv().kickname]:Kick("Kicked By The Owner Script")
-              end
-              end)
-              
-  	end    
-})
-
 Tab:AddButton({
 	Name = "Old God",
 	Callback = function()
