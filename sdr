@@ -1232,16 +1232,6 @@ Tab:AddSlider({
 	end    
 })
 
-Tab:AddDropdown({
-	Name = "Magnitude 2 (For Mobile Bug)",
-	Default = "1",
-	Options = {"1", "10", "20", "30", "40", "50", "60"},
-	Callback = function(Value)
-		print(Value)
-        getgenv().magnitudemobile = Value
-	end    
-})
-
 Tab:AddToggle({
 	Name = "Auto Plant",
 	Default = false,
@@ -1249,9 +1239,9 @@ Tab:AddToggle({
 		print(t)
         getgenv().planting = t
         spawn(function()
-            while getgenv().planting == true and wait(1) do
+            while getgenv().planting == true and wait(2) do
                 for _, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
-                    if v.Name == "Plant Box" and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude or getgenv().magnitudemobile then
+                    if v.Name == "Plant Box" and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude then
                         game.ReplicatedStorage.Events.InteractStructure:FireServer(v, getgenv().autoPlantPlant)
                     end
                 end
@@ -1317,16 +1307,6 @@ Tab:AddSlider({
 	end    
 })
 
-Tab:AddDropdown({
-	Name = "Magnitude 2 (For Mobile Bug)",
-	Default = "1",
-	Options = {"1", "10", "20", "30", "40", "50", "60"},
-	Callback = function(Value)
-		print(Value)
-        getgenv().magnitudemobil = Value
-	end    
-})
-
 Tab:AddToggle({
 	Name = "Harverest Fruit",
 	Default = false,
@@ -1334,9 +1314,9 @@ Tab:AddToggle({
 		print(t)
         getgenv().planting = t
         spawn(function()
-            while getgenv().planting == true and wait(0.5) do
+            while getgenv().planting == true and wait(1) do
                 for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
-                    if v.Name == getgenv().getfruit and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude1 or getgenv().magnitudemobil then
+                    if v.Name == getgenv().getfruit and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitude1 then
                         game:GetService("ReplicatedStorage").Events.Pickup:FireServer(v)
                         
                     end
