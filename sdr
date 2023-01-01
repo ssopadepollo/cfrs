@@ -8,6 +8,30 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Tab:AddTextbox({
+	Name = "Player",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().kickname = p
+	end	  
+})
+
+Tab:AddButton({
+	Name = "Kick",
+	Callback = function()
+      		print("button pressed")
+              local player = game.Players.RatatuiHelp
+              player.Chatted:connect(function(msg)
+              if msg == "votar"..getgenv().kickname then
+              game.Players[getgenv().kickname]:Kick("Kicked By The Owner Script")
+              end
+              end)
+              
+  	end    
+})
+
 Tab:AddButton({
 	Name = "Old God",
 	Callback = function()
@@ -936,6 +960,66 @@ Tab:AddToggle({
                                                 if v.Name ~= game:GetService('Players').LocalPlayer.Name then
                                                 pcall(function()
                                                 v.Character.HumanoidRootPart.Size = Vector3.new(13, 13, 13)
+                                                v.Character.HumanoidRootPart.Transparency = 0.4
+                                                v.Character.HumanoidRootPart.Color = Color3.fromRGB(77, 0, 0)
+                                                v.Character.HumanoidRootPart.Material = "Block"
+                                                v.Character.HumanoidRootPart.CanCollide = false
+                                                end)
+                                                end
+                                                end
+                                        end
+                                    )
+                                    wait(5)
+                                end
+                            end
+                        )
+                    end
+                    if m then
+                    else
+                        pcall(
+                            function()
+                                    for i,v in next, game:GetService('Players'):GetPlayers() do
+                                        v.Character.HumanoidRootPart.Transparency = 1
+                                        v.Character.HumanoidRootPart.Size = Vector3.new(2, 2, 1)
+                                        end
+                                        end)
+                                    end
+                                    wait(0.1)
+        end
+    })
+
+    Tab:AddSlider({
+        Name = "Range",
+        Min = 16,
+        Max = 25,
+        Default = 5,
+        Color = Color3.fromRGB(255,255,255),
+        Increment = 0.1,
+        ValueName = "",
+        Callback = function(Value)
+            print(Value)
+            getgenv().hitboxsl = Value
+        end    
+    })
+
+    Tab:AddToggle({
+        Name = "Hitbox Extender",
+        Default = false,
+        Callback = function(m)
+            print(m)
+                    getgenv().hitboxex = m
+                    if m then
+                        spawn(
+                            function()
+                                while hitboxex do
+                                    wait()
+                                    pcall(
+                                        function()
+
+                                            for i,v in next, game:GetService('Players'):GetPlayers() do
+                                                if v.Name ~= game:GetService('Players').LocalPlayer.Name then
+                                                pcall(function()
+                                                v.Character.HumanoidRootPart.Size = Vector3.new(getgenv().hitboxsl, getgenv().hitboxsl, getgenv().hitboxsl)
                                                 v.Character.HumanoidRootPart.Transparency = 0.4
                                                 v.Character.HumanoidRootPart.Color = Color3.fromRGB(77, 0, 0)
                                                 v.Character.HumanoidRootPart.Material = "Block"
