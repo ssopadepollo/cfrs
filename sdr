@@ -4570,10 +4570,140 @@ Tab:AddToggle({
     end
 })
 
+Tab:AddLabel("None ;-;")
+
 local Tab = Window:MakeTab({
-	Name = "Donators",
+	Name = "MOBILE FIX",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
 })
 
-Tab:AddLabel("None ;-;")
+local Section = Tab:AddSection({
+	Name = "Plant"
+})
+
+Tab:AddTextbox({
+	Name = "Plant Name",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(Value)
+		print(Value)
+        getgenv().autoPlantPlant2 = Value
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Magnitude (60) Max",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().magnitudemobile2 = p
+	end	  
+})
+
+Tab:AddToggle({
+	Name = "Auto Plant",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().planting2 = t
+        spawn(function()
+            while getgenv().planting2 == true and wait(2) do
+                for _, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
+                    if v.Name == "Plant Box" and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitudemobile2 then
+                        game.ReplicatedStorage.Events.InteractStructure:FireServer(v, getgenv().autoPlantPlant2)
+                    end
+                end
+            end
+        end)
+	end    
+})
+
+local Section = Tab:AddSection({
+	Name = "Harverest Plant"
+})
+
+local chosenFruit = "Bloodfruit"
+
+Tab:AddTextbox({
+	Name = "Magnitude (60) Max",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        getgenv().magnitudemobile = p
+	end	  
+})
+
+Tab:AddToggle({
+	Name = "Harverest Fruit",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().planting1 = t
+        spawn(function()
+            while getgenv().planting1 == true and wait(1) do
+                for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
+                    if v.Name == getgenv().getfruit1 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitudemobile then
+                        game:GetService("ReplicatedStorage").Events.Pickup:FireServer(v)
+                        
+                    end
+                end
+            end
+    end)
+end
+})
+
+local Section = Tab:AddSection({
+	Name = "Player"
+})
+
+Tab:AddTextbox({
+	Name = "FOV",
+	Default = "70",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        game:GetService'Workspace'.Camera.FieldOfView = p
+	end	  
+})
+
+Tab:AddSlider({
+	Name = "Jumppower",
+	Min = 50,
+	Max = 65,
+	Default = 5,
+	Color = Color3.fromRGB(255,255,255),
+	Increment = 1,
+	ValueName = "",
+	Callback = function(ls)
+		print(ls)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = ls
+	end    
+})
+
+Tab:AddTextbox({
+	Name = "Jumppower",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(p)
+		print(p)
+        game.Players.LocalPlayer.Character.Humanoid.JumpPower = p
+	end	  
+})
+
+Tab:AddTextbox({
+	Name = "Walkspeed",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(ls)
+		print(ls)
+        _G.WS = ls;
+                local Humanoid = game:GetService("Players").LocalPlayer.Character.Humanoid;
+                Humanoid:GetPropertyChangedSignal("WalkSpeed"):Connect(function()
+                Humanoid.WalkSpeed = _G.WS;
+                end)
+                Humanoid.WalkSpeed = _G.WS;
+	end	  
+})
