@@ -679,7 +679,23 @@ _G.AutoBerries = false
 _G.AutoBluefruit = false
 _G.AutoLemons = false
 _G.AutoJelly = false
+_G.AutoStraw = false
+--x5
 
+_G.AutoBlood5 = false
+_G.AutoBerries5 = false
+_G.AutoBluefruit5 = false
+_G.AutoLemons5 = false
+_G.AutoJelly5 = false
+_G.AutoStraw5 = false
+--x1
+
+_G.AutoBlood1 = false
+_G.AutoBerries1 = false
+_G.AutoBluefruit1 = false
+_G.AutoLemons1 = false
+_G.AutoJelly1 = false
+_G.AutoStraw1 = false
 -- functions
 
 function AutoPickUp()
@@ -721,6 +737,60 @@ function KeyBindStrawBerries()
     game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
     game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
     game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+end
+
+--x5
+function KeyBindBloodfruit5()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+end
+
+function KeyBindBerries5()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+end
+
+function KeyBindBluefruit5()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+end
+
+function KeyBindStrawBerries5()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
+end
+--x1-------------------------------------
+
+function KeyBindBloodfruit1()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit")
+end
+
+function KeyBindBerries1()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry")
+end
+
+function KeyBindBluefruit1()
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit")
+end
+
+function KeyBindStrawBerries1()
     game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry")
 end
 
@@ -798,8 +868,206 @@ function AutoJelly()
        end
     end
 end
+
+--x5----------------------------------------------------
+function AutoBlood5()
+    while _G.AutoBlood5 == true do
+    if _G.AutoBlood5 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoStraw5()
+while _G.AutoStraw5 == true do
+if _G.AutoStraw5 == true then 
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry") -- fruit
+ end
+  task.wait()
+end
+end
+end
+
+function AutoBerries5()
+while _G.AutoBerries5 == true do
+    if _G.AutoBerries5 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoBluefruit5()
+while _G.AutoBluefruit5 == true do
+    if _G.AutoBluefruit5 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoLemons5()
+while _G.AutoLemons5 == true do
+    if _G.AutoLemons5 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Lemon") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoJelly5()
+while _G.AutoJelly5 == true do
+    if _G.AutoJelly5 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Jelly") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+--x1------------------------------------------------------------
+
+function AutoBlood1()
+    while _G.AutoBlood1 == true do
+    if _G.AutoBlood1 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bloodfruit") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoStraw1()
+while _G.AutoStraw1 == true do
+if _G.AutoStraw1 == true then 
+if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Strawberry") -- fruit
+ end
+  task.wait()
+end
+end
+end
+
+function AutoBerries1()
+while _G.AutoBerries1 == true do
+    if _G.AutoBerries1 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Berry") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoBluefruit1()
+while _G.AutoBluefruit1 == true do
+    if _G.AutoBluefruit1 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Bluefruit") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoLemons1()
+while _G.AutoLemons1 == true do
+    if _G.AutoLemons1 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Lemon") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
+function AutoJelly1()
+while _G.AutoJelly1 == true do
+    if _G.AutoJelly1 == true then 
+    if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer("Jelly") -- fruit
+     end
+      task.wait()
+   end
+end
+end
+
 --nahiideah2 vengarme
 -- toggles
+local Section = Heals:AddSection({
+	Name = "x1 Speed"
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Bloodfruit",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoBlood1 = Value
+        AutoBlood1()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Berries",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoBerries1 = Value
+        AutoBerries1()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Bluefruit",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoBluefruit1 = Value
+        AutoBluefruit1()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Lemons",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoLemons1 = Value
+        AutoLemons1()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Jelly",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoJelly1 = Value
+        AutoJelly1()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Strawberry",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoStraw1 = Value
+        AutoStraw1()
+	end    
+})
+
+local Section = Heals:AddSection({
+	Name = "x4 Speed"
+})
+
 Heals:AddToggle({
 	Name = "AutoHeal - Bloodfruit",
 	Default = false,
@@ -850,6 +1118,64 @@ Heals:AddToggle({
 	Default = false,
 	Callback = function(Value)
 		_G.AutoStraw = Value
+        AutoStraw()
+	end    
+})
+
+local Section = Heals:AddSection({
+	Name = "x5 Speed"
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Bloodfruit",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoBlood5 = Value
+        AutoBlood5()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Berries",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoBerries5 = Value
+        AutoBerries5()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Bluefruit",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoBluefruit5 = Value
+        AutoBluefruit5()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Lemons",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoLemons5 = Value
+        AutoLemons5()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Jelly",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoJelly5 = Value
+        AutoJelly5()
+	end    
+})
+
+Heals:AddToggle({
+	Name = "AutoHeal - Strawberry",
+	Default = false,
+	Callback = function(Value)
+		_G.AutoStraw5 = Value
         AutoStraw()
 	end    
 })
