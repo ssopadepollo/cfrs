@@ -3518,7 +3518,7 @@ Tab:AddToggle({
                         function()
                             for b = 1, 10 do
                                 for b, c in pairs(game.workspace:GetChildren()) do
-                                    if c.Name == "Old God" then
+                                    if c.Name == "Ancient Tree" then
                                         c:FindFirstChildWhichIsA("BillboardGui"):Remove()
                                     end
                                 end
