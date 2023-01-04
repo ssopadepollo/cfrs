@@ -3454,7 +3454,7 @@ local Section = Tab:AddSection({
 })
 
 Tab:AddToggle({
-	Name = "God's",
+	Name = "Old God",
 	Default = false,
 	Callback = function(m)
 		print(m)
@@ -3467,7 +3467,7 @@ Tab:AddToggle({
                                 pcall(
                                     function()
                                         for b, c in pairs(game.workspace:GetDescendants()) do
-                                            if c.Name == "Miserable God" or "Old God" or "Wealthy God" or "Sleeping God" or "Hateful God" then
+                                            if c.Name == "Old God" then
                                                 if not c:FindFirstChildWhichIsA("BillboardGui") then
                                                     local a3 = Instance.new("BillboardGui", c)
                                                     local a4 = Instance.new("TextLabel", a3)
@@ -3518,7 +3518,7 @@ Tab:AddToggle({
                         function()
                             for b = 1, 10 do
                                 for b, c in pairs(game.workspace:GetChildren()) do
-                                    if c.Name == "Miserable God" or "Old God" or "Wealthy God" or "Sleeping God" or "Hateful God" then
+                                    if c.Name == "Old God" then
                                         c:FindFirstChildWhichIsA("BillboardGui"):Remove()
                                     end
                                 end
@@ -3531,7 +3531,238 @@ Tab:AddToggle({
 })
 
 Tab:AddToggle({
-	Name = "God's",
+	Name = "Hateful God",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().godesp = m
+                if m then
+                    spawn(
+                        function()
+                            while godesp do
+                                wait()
+                                pcall(
+                                    function()
+                                        for b, c in pairs(game.workspace:GetDescendants()) do
+                                            if c.Name == "Hateful God" then
+                                                if not c:FindFirstChildWhichIsA("BillboardGui") then
+                                                    local a3 = Instance.new("BillboardGui", c)
+                                                    local a4 = Instance.new("TextLabel", a3)
+                                                    local a5 = Instance.new("TextLabel", a3)
+                                                    a3.Name = c.Name
+                                                    a3.ResetOnSpawn = false
+                                                    a3.AlwaysOnTop = true
+                                                    a3.LightInfluence = 0
+                                                    a3.Size = UDim2.new(0, 10, 0, 10)
+                                                    a4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.Text = c.Name
+                                                    a4.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a4.BorderSizePixel = 4
+                                                    a4.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a4.BorderSizePixel = 0
+                                                    a4.Font = "GothamBlack"
+                                                    a4.TextSize = 15
+                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
+                                                    a4.TextYAlignment = "Bottom"
+                                                    a5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    while wait() do
+                                                    local heal = c.Health.Value
+                                                    a5.Text = "[HEALTH:"..heal.."]"
+                                                    a5.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a5.BorderSizePixel = 4
+                                                    a5.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a5.BorderSizePixel = 0
+                                                    a5.Font = "GothamBlack"
+                                                    a5.TextSize = 15
+                                                    a5.TextColor3 = Color3.fromRGB(85, 255, 0)                                                    
+                                                    a5.TextStrokeTransparency = 0
+                                                    a5.TextYAlignment = "Top"
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                                wait(5)
+                            end
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                            for b = 1, 10 do
+                                for b, c in pairs(game.workspace:GetChildren()) do
+                                    if c.Name == "Hateful God" then
+                                        c:FindFirstChildWhichIsA("BillboardGui"):Remove()
+                                    end
+                                end
+                                wait(0.1)
+                            end
+                        end
+                    )
+                end
+            end
+})
+
+Tab:AddToggle({
+	Name = "Sleeping God",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().godesp = m
+                if m then
+                    spawn(
+                        function()
+                            while godesp do
+                                wait()
+                                pcall(
+                                    function()
+                                        for b, c in pairs(game.workspace:GetDescendants()) do
+                                            if c.Name == "Sleeping God" then
+                                                if not c:FindFirstChildWhichIsA("BillboardGui") then
+                                                    local a3 = Instance.new("BillboardGui", c)
+                                                    local a4 = Instance.new("TextLabel", a3)
+                                                    local a5 = Instance.new("TextLabel", a3)
+                                                    a3.Name = c.Name
+                                                    a3.ResetOnSpawn = false
+                                                    a3.AlwaysOnTop = true
+                                                    a3.LightInfluence = 0
+                                                    a3.Size = UDim2.new(0, 10, 0, 10)
+                                                    a4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.Text = c.Name
+                                                    a4.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a4.BorderSizePixel = 4
+                                                    a4.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a4.BorderSizePixel = 0
+                                                    a4.Font = "GothamBlack"
+                                                    a4.TextSize = 15
+                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
+                                                    a4.TextYAlignment = "Bottom"
+                                                    a5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    while wait() do
+                                                    local heal = c.Health.Value
+                                                    a5.Text = "[HEALTH:"..heal.."]"
+                                                    a5.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a5.BorderSizePixel = 4
+                                                    a5.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a5.BorderSizePixel = 0
+                                                    a5.Font = "GothamBlack"
+                                                    a5.TextSize = 15
+                                                    a5.TextColor3 = Color3.fromRGB(85, 255, 0)                                                    
+                                                    a5.TextStrokeTransparency = 0
+                                                    a5.TextYAlignment = "Top"
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                                wait(5)
+                            end
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                            for b = 1, 10 do
+                                for b, c in pairs(game.workspace:GetChildren()) do
+                                    if c.Name == "Sleeping God" then
+                                        c:FindFirstChildWhichIsA("BillboardGui"):Remove()
+                                    end
+                                end
+                                wait(0.1)
+                            end
+                        end
+                    )
+                end
+            end
+})
+
+Tab:AddToggle({
+	Name = "Wealthy God",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().godesp = m
+                if m then
+                    spawn(
+                        function()
+                            while godesp do
+                                wait()
+                                pcall(
+                                    function()
+                                        for b, c in pairs(game.workspace:GetDescendants()) do
+                                            if c.Name == "Wealthy God" then
+                                                if not c:FindFirstChildWhichIsA("BillboardGui") then
+                                                    local a3 = Instance.new("BillboardGui", c)
+                                                    local a4 = Instance.new("TextLabel", a3)
+                                                    local a5 = Instance.new("TextLabel", a3)
+                                                    a3.Name = c.Name
+                                                    a3.ResetOnSpawn = false
+                                                    a3.AlwaysOnTop = true
+                                                    a3.LightInfluence = 0
+                                                    a3.Size = UDim2.new(0, 10, 0, 10)
+                                                    a4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.Text = c.Name
+                                                    a4.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a4.BorderSizePixel = 4
+                                                    a4.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a4.BorderSizePixel = 0
+                                                    a4.Font = "GothamBlack"
+                                                    a4.TextSize = 15
+                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
+                                                    a4.TextYAlignment = "Bottom"
+                                                    a5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    while wait() do
+                                                    local heal = c.Health.Value
+                                                    a5.Text = "[HEALTH:"..heal.."]"
+                                                    a5.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a5.BorderSizePixel = 4
+                                                    a5.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a5.BorderSizePixel = 0
+                                                    a5.Font = "GothamBlack"
+                                                    a5.TextSize = 15
+                                                    a5.TextColor3 = Color3.fromRGB(85, 255, 0)                                                    
+                                                    a5.TextStrokeTransparency = 0
+                                                    a5.TextYAlignment = "Top"
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                                wait(5)
+                            end
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                            for b = 1, 10 do
+                                for b, c in pairs(game.workspace:GetChildren()) do
+                                    if c.Name == "Wealthy God" then
+                                        c:FindFirstChildWhichIsA("BillboardGui"):Remove()
+                                    end
+                                end
+                                wait(0.1)
+                            end
+                        end
+                    )
+                end
+            end
+})
+
+Tab:AddToggle({
+	Name = "Miserable God",
 	Default = false,
 	Callback = function(m)
 		print(m)
@@ -4760,20 +4991,6 @@ Tab:AddTextbox({
 		print(p)
         game:GetService'Workspace'.Camera.FieldOfView = p
 	end	  
-})
-
-Tab:AddSlider({
-	Name = "Jumppower",
-	Min = 50,
-	Max = 65,
-	Default = 5,
-	Color = Color3.fromRGB(255,255,255),
-	Increment = 1,
-	ValueName = "",
-	Callback = function(ls)
-		print(ls)
-    game.Players.LocalPlayer.Character.Humanoid.JumpPower = ls
-	end    
 })
 
 Tab:AddTextbox({
