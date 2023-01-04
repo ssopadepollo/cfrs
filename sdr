@@ -3915,6 +3915,83 @@ Tab:AddToggle({
             end
 })
 
+Tab:AddToggle({
+	Name = "Lonely God",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().godesp = m
+                if m then
+                    spawn(
+                        function()
+                            while godesp do
+                                wait()
+                                pcall(
+                                    function()
+                                        for b, c in pairs(game.workspace.Resources:GetDescendants()) do
+                                            if c.Name == "Lonely God" then
+                                                if not c:FindFirstChildWhichIsA("BillboardGui") then
+                                                    local a3 = Instance.new("BillboardGui", c)
+                                                    local a4 = Instance.new("TextLabel", a3)
+                                                    local a5 = Instance.new("TextLabel", a3)
+                                                    a3.Name = c.Name
+                                                    a3.ResetOnSpawn = false
+                                                    a3.AlwaysOnTop = true
+                                                    a3.LightInfluence = 0
+                                                    a3.Size = UDim2.new(0, 10, 0, 10)
+                                                    a4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    a4.Text = c.Name
+                                                    a4.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a4.BorderSizePixel = 4
+                                                    a4.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a4.BorderSizePixel = 0
+                                                    a4.Font = "GothamBlack"
+                                                    a4.TextSize = 15
+                                                    a4.TextColor3 = Color3.fromRGB(255, 255, 255)                                                    
+                                                    a4.TextStrokeTransparency = 0
+                                                    a4.TextYAlignment = "Bottom"
+                                                    a5.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                                    while wait() do
+                                                    local heal = c.Health.Value
+                                                    a5.Text = "[HEALTH:"..heal.."]"
+                                                    a5.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                                    a5.BorderSizePixel = 4
+                                                    a5.BorderColor3 = Color3.new(255, 255, 255)
+                                                    a5.BorderSizePixel = 0
+                                                    a5.Font = "GothamBlack"
+                                                    a5.TextSize = 15
+                                                    a5.TextColor3 = Color3.fromRGB(85, 255, 0)                                                    
+                                                    a5.TextStrokeTransparency = 0
+                                                    a5.TextYAlignment = "Top"
+                                                    end
+                                                end
+                                            end
+                                        end
+                                    end
+                                )
+                                wait(5)
+                            end
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                            for b = 1, 10 do
+                                for b, c in pairs(game.workspace.Resources:GetChildren()) do
+                                    if c.Name == "Lonely God" then
+                                        c:FindFirstChildWhichIsA("BillboardGui"):Remove()
+                                    end
+                                end
+                                wait(0.1)
+                            end
+                        end
+                    )
+                end
+            end
+})
+
 local Section = Tab:AddSection({
 	Name = "Node Esp"
 })
@@ -4345,6 +4422,61 @@ Tab:AddToggle({
                     )
                 end
     end
+})
+
+local Section = Tab:AddSection({
+	Name = "Cham ESP"
+})
+
+Tab:AddToggle({
+	Name = "Chams",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().chamgod = m
+                if m then
+                    spawn(
+                        function()
+                            while chamgod do
+                                wait()
+                                pcall(
+                                    function()
+                                        local plr = game.Players.LocalPlayer
+                                        local players = game.Players:GetPlayers()
+
+                                        for i, v in pairs(players) do
+                                        if v ~= game.Players.LocalPlayer then
+                                        local esp = Instance.new("Highlight")
+                                        esp.Name = "chams"
+                                        esp.FillTransparency = 0.5
+                                        esp.FillColor = Color3.new(239, 184, 56)
+                                        esp.OutlineColor = Color3.new(0, 0, 0)
+                                        esp.OutlineTransparency = 0
+                                        esp.Parent = v.Character["God Chestplate"]
+                                           end
+                                        end
+                                    end)
+                                    end
+                                wait(5)
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                                for i, v in pairs(game.Players:GetPlayers()) do
+                                    for i, c in pairs(v.Character:GetDescendants()) do
+                                    if c.Name == "chams" then
+                                    c:Destroy()
+                                    end
+                                    end
+                                wait(0.1)
+                            end
+                        end
+                    )
+                end
+            end
 })
 
 local Tab = Window:MakeTab({
@@ -4989,17 +5121,7 @@ Tab:AddTextbox({
 	TextDisappear = false,
 	Callback = function(Value)
 		print(Value)
-        getgenv().autoPlantPlant2 = Value
-	end	  
-})
-
-Tab:AddTextbox({
-	Name = "Magnitude (60) Max",
-	Default = "",
-	TextDisappear = false,
-	Callback = function(p)
-		print(p)
-        getgenv().magnitudemobile2 = p
+        getgenv().aua = Value
 	end	  
 })
 
@@ -5012,8 +5134,8 @@ Tab:AddToggle({
         spawn(function()
             while getgenv().planting2 == true and wait(2) do
                 for _, v in pairs(game:GetService("Workspace").Deployables:GetChildren()) do
-                    if v.Name == "Plant Box" and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitudemobile2 then
-                        game.ReplicatedStorage.Events.InteractStructure:FireServer(v, getgenv().autoPlantPlant2)
+                    if v.Name == "Plant Box" and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < 60 then
+                        game.ReplicatedStorage.Events.InteractStructure:FireServer(v, getgenv().aua)
                     end
                 end
             end
@@ -5028,12 +5150,12 @@ local Section = Tab:AddSection({
 local chosenFruit = "Bloodfruit"
 
 Tab:AddTextbox({
-	Name = "Magnitude (60) Max",
+	Name = "Bush Name",
 	Default = "",
 	TextDisappear = false,
 	Callback = function(p)
 		print(p)
-        getgenv().magnitudemobile = p
+        getgenv().bushname = p
 	end	  
 })
 
@@ -5046,7 +5168,7 @@ Tab:AddToggle({
         spawn(function()
             while getgenv().planting1 == true and wait(1) do
                 for _, v in pairs(game:GetService("Workspace"):GetChildren()) do
-                    if v.Name == getgenv().getfruit1 and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < getgenv().magnitudemobile then
+                    if v.Name == getgenv().bushname and (game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position - v.PrimaryPart.Position).magnitude < 60 then
                         game:GetService("ReplicatedStorage").Events.Pickup:FireServer(v)
                         
                     end
