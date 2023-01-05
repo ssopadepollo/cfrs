@@ -1530,6 +1530,35 @@ local Tab = Window:MakeTab({
 	PremiumOnly = false
 })
 
+Tab:AddTextbox({
+	Name = "Food Name",
+	Default = "",
+	TextDisappear = false,
+	Callback = function(t)
+		print(t)
+        getgenv().autc = t
+	end	  
+})
+
+Tab:AddToggle({
+	Name = "Eat When Health is 99",
+	Default = false,
+	Callback = function(t)
+		print(t)
+        getgenv().psac = t
+        spawn(function()
+            while getgenv().psac == true and wait(2) do
+                if game:GetService("Players").LocalPlayer.Character:FindFirstChild("Humanoid").Health< 100 then
+                    for i=1, 1 do
+                    game:GetService("ReplicatedStorage").Events.UseBagItem:FireServer(getgenv().autc)
+                    wait(2)
+                    end
+                    end
+            end
+        end)
+	end    
+})
+
 local Section = Tab:AddSection({
 	Name = "Plant"
 })
