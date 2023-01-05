@@ -3108,6 +3108,67 @@ Tab:AddButton({
 })
 
 Tab:AddToggle({
+	Name = "ESP Name",
+	Default = false,
+	Callback = function(m)
+		print(m)
+                getgenv().nep = m
+                if m then
+                    spawn(
+                        function()
+                                pcall(
+                                    function()
+                                        for i, v in pairs(game.Players:GetPlayers()) do
+                                            if not v:FindFirstChildWhichIsA("BillboardGui") then
+                                            if v~= game.Players.LocalPlayer then
+                                            local ap = Instance.new("BillboardGui", v)
+                                            local ep = Instance.new("TextLabel", ap)
+                                            ap.Parent = v.Character.Head
+                                            ap.Name = v.Name
+                                            ap.ResetOnSpawn = false
+                                            ap.AlwaysOnTop = true
+                                            ap.LightInfluence = 0
+                                            ap.Size = UDim2.new(0, 10, 0, 10)
+                                            ep.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+                                            ep.Text = v.Name
+                                            ep.Size = UDim2.new(0.0001, 0.00001, 0.0001, 0.00001)
+                                            ep.BorderSizePixel = 4
+                                            ep.BorderColor3 = Color3.new(255, 255, 255)
+                                            ep.BorderSizePixel = 0
+                                            ep.Font = "Code"
+                                            ep.TextSize = 15
+                                            ep.TextColor3 = Color3.fromRGB(255, 255, 255)                  
+                                            ep.TextStrokeTransparency = 0
+                                            ep.TextYAlignment = "Bottom"
+                                            end
+                                            end
+                                    end
+                                    end)
+                                wait(5)
+                        end
+                    )
+                end
+                if m then
+                else
+                    pcall(
+                        function()
+                            for i, v in pairs(game.Players:GetPlayers()) do
+                                if v~= game.Players.LocalPlayer then
+                                for i, c in pairs(v.Character.Head:GetDescendants()) do
+                                if c.Name:find(v.Name) then
+                                c:Destroy()
+                                end
+                                end
+                                wait(0.1)
+                            end
+                        end
+                    
+                end)
+            end
+        end
+})
+
+Tab:AddToggle({
 	Name = "Chams",
 	Default = false,
 	Callback = function(m)
